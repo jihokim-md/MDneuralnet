@@ -1,0 +1,79 @@
+{{- define "main" -}}
+
+<section class="home-section wg-pages">
+{{ partial "page_header.html" . }}
+{{ $item := . }}
+</section>
+
+<div class="container" style="padding-top: 0">
+
+{{ $PermaTitle := trim .RelPermalink "/" }}
+{{ $TitleBase := path.Base $PermaTitle }}
+{{ $taxonomy2 := "categories" }}
+{{ $items_count := 0 }}
+{{ if eq $TitleBase "blog"}}
+  {{ $items_count := 65535 }}
+  {{ $categories := first $items_count (index site.Taxonomies $taxonomy2).ByCount }}
+  {{ $count := len $categories }}
+
+  <div class="dropdown mb-3" style="font-family: Source Sans pro;">
+    <div class="btn btn-outline-primary" onclick="dropdown_category_click();">
+    <a data-target="#" class="dropdown-toggle" style="font-weight: bold; letter-spacing: 0.6px;">
+      <span>Category</span>
+    </a>
+    <ul class="dropdown-menu mt-1 pt-1 pb-1" id="dropdown_category">
+    {{ range $name, $term := (sort $categories ".Page.Title" "asc") }}
+    {{ $tagCount := len $term.Pages }}
+      <li class="dropdown-item m-0 p-0">
+        <a href="{{ .Page.RelPermalink }}">
+          <span>{{ .Page.Title }}</span>
+        </a>
+      </li>
+    {{ end }}
+    </ul>
+    </div>
+  </div>
+
+{{ else }}
+{{ end }}
+
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+
+    <div class="card-simple" style=" cursor: pointer;" onclick="location.href='{{ .RelPermalink }}';">
+
+      {{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ $anchor := .Params.image.focal_point | default "Smart" }}
+      {{ with $resource }}
+      {{ $image := .Fill (printf "600x200 q90 %s" $anchor) }}
+
+          <img src="{{ $image.RelPermalink }}" class="article-thumbnail" alt="">
+      {{end}}
+
+      <div style="height: 150px;">
+        <h3 class="article-title mb-2 mt-2">
+          <a href="{{ .RelPermalink }}">{{ .Title | truncate 40 }}</a>
+        </h3>
+        <div class="article-style" style="height: 50px;">
+          <p>
+        {{ if .Params.summary }}
+        {{ .Params.summary | plainify | emojify | truncate 200  }}
+        {{ else if .Params.abstract }}
+        {{ .Params.abstract | plainify | emojify | truncate 200 }}
+        {{ else if .Summary }}
+        {{ .Summary | plainify | emojify | truncate 80 }}
+        {{ end }}</p>
+        </div>
+        {{ partial "tags.html" . }}
+      </div>
+    </div>
+  {{ end }}
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}

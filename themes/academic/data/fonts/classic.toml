@@ -1,0 +1,11 @@
+# Font style metadata
+name = "Classic"
+
+# Optional Google font URL
+google_fonts = "Black+Han+Sans|Nanum+Gothic|Lato:400,700|Roboto+Mono"
+
+# Font families
+heading_font = "Black Han Sans"
+body_font = "Lato"
+nav_font = "Signika"
+mono_font = "Roboto Mono"

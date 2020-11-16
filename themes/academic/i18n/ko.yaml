@@ -1,0 +1,132 @@
+- id: toggle_navigation
+  translation: 네비게이션
+- id: table_of_contents
+  translation: 목차
+- id: see all
+  translation: More
+- id: on_this_page
+  translation: On this page
+- id: back_to_top
+  translation: 위로
+- id: related
+  translation: Related
+- id: minute_read
+  translation: 분
+- id: previous
+  translation: 이전 글
+- id: next
+  translation: 다음 글
+- id: figure
+  translation: 'Figure %d:'
+- id: btn_preprint
+  translation: Preprint
+- id: btn_pdf
+  translation: PDF
+- id: btn_cite
+  translation: Cite
+- id: btn_slides
+  translation: 슬라이드
+- id: btn_video
+  translation: 비디오
+- id: btn_code
+  translation: 코드
+- id: btn_dataset
+  translation: 데이터세트
+- id: btn_project
+  translation: 프로젝트
+- id: btn_poster
+  translation: 포스터
+- id: btn_source
+  translation: Source Document
+- id: btn_copy
+  translation: Copy
+- id: btn_download
+  translation: 다운로드
+- id: interests
+  translation: interests
+- id: education
+  translation: education
+- id: user_profile_latest
+  translation: Latest
+- id: see_certificate
+  translation: See certificate
+- id: present
+  translation: Present
+- id: more_pages
+  translation: more
+- id: more_posts
+  translation: more
+- id: more_talks
+  translation: More Talks
+- id: more_publications
+  translation: more
+- id: contact_name
+  translation: Name
+- id: contact_email
+  translation: Email
+- id: contact_message
+  translation: Message
+- id: contact_send
+  translation: Send
+- id: book_appointment
+  translation: Book an appointment
+- id: abstract
+  translation: 초록
+- id: publication
+  translation: 발행기관
+- id: publication_type
+  translation: 출판 형태
+- id: date
+  translation: 날짜
+- id: last_updated
+  translation: Last updated on
+- id: event
+  translation: 이벤트
+- id: location
+  translation: 장소
+- id: pub_uncat
+  translation: Uncategorized
+- id: pub_conf
+  translation: Conference paper
+- id: pub_journal
+  translation: Journal article
+- id: pub_preprint
+  translation: Preprint
+- id: pub_report
+  translation: Report
+- id: pub_book
+  translation: Book
+- id: pub_book_section
+  translation: Book section
+- id: pub_thesis
+  translation: Thesis
+- id: pub_patent
+  translation: Patent
+- id: open_project_site
+  translation: 프로젝트 사이트로 가기
+- id: posts
+  translation: 포스트
+- id: publications
+  translation: 논문
+- id: talks
+  translation: 강연
+- id: projects
+  translation: 프로젝트
+- id: search
+  translation: 검색
+- id: search_placeholder
+  translation: Search...
+- id: search_results
+  translation: 개의 검색 결과
+- id: search_no_results
+  translation: 😥 검색 결과가 없습니다
+- id: page_not_found
+  translation: Sorry, the page you are looking for does not exist
+- id: 404_recommendations
+  translation: 혹시 이런 글은 어떠세요?
+- id: cookie_message
+  translation: This website uses cookies to ensure you get the best experience on our website.
+- id: cookie_dismiss
+  translation: Got it!
+- id: cookie_learn
+  translation: Learn more

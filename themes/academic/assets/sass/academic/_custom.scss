@@ -1,0 +1,224 @@
+/*************************************************
+ *  Custom
+ **************************************************/
+::-moz-selection {
+   background: $sta-menu_text;
+   color: #fff;
+}
+::selection {
+   background: $sta-menu_text;
+   color: #fff;
+}
+
+.selected {
+   background: $sta-menu_text;
+   color: #fff;
+}
+
+.powered-by {
+  font-size: 0.6rem;
+  font-family: Source Sans Pro;
+  text-align: center;
+}
+
+.docs-card {
+  padding: 0;
+}
+
+.docs-title a {
+  margin-left: 1rem;
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: #333e4c;
+  transition: color 0.2s ease;
+}
+
+.docs-title a:hover {
+  color: #333e4c80;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.translate {
+  display: inline-block;
+}
+.translate:hover {
+  display: inline-block;
+  box-shadow: 0 0px 3px 0 rgba(0,0,0,0.5);
+  transition: all 0.2s ease-out;
+  transform: scale(1.05);
+}
+
+.translate_mobile {
+  display: none;  
+}
+
+@media only screen and (max-width: 768px) {
+  .translate {
+    display: none;
+  }
+
+  .translate_mobile { 
+    display: inline;
+    text-decoration:none !important;
+  }
+}
+
+#TableOfContents a {
+  color: $sta-menu-text;
+  padding: 0 1rem;
+}
+
+/*************************************************
+ *  Blog
+ **************************************************/
+
+.blog-sidebar {
+  text-align: left; 
+  height: 100%;
+}
+
+
+@media (min-width:1200px) {
+  .blog-sidebar {
+  top: 0px;
+  position: absolute;
+  z-index: 1000;
+  }
+}
+
+/* blog sidebar li>a. */
+
+.blog-sidebar .nav>li>a {
+  display: block;
+  padding: 0.2rem 1rem;
+  font-size: 0.8em;
+  color: $sta-menu-text;
+  font-weight: 400;
+}
+
+.blog-sidebar .nav>li>a:hover {
+  text-decoration: none;
+  color: $sta-primary;
+  background-color: #008cdd10;
+}
+
+.blog-sidebar .blog-toc-item.active a,
+.blog-sidebar .nav>.active:hover>a,
+.blog-sidebar .nav>.active>a {
+  font-weight: 400;
+  color: #fff;
+  background-color: #008cddaa;
+}
+
+/* blog links. */
+
+.blog-toggle {
+  font-size: 1rem;
+  color: $sta-menu-text;
+  background-color: #fff;
+  text-transform: capitalize; 
+  font-weight: 800;
+  margin: 1rem 0 0.5rem 0;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  border-color: $sta-menu-text;
+  font-family: Source Sans Pro;
+  letter-spacing: 0.8px;
+}
+
+.blog-toggle:active,
+.blog-toggle:hover,
+.blog-toggle:focus {
+  color: #fff!important;
+  background-color: $sta-menu-text!important;
+  border-color: $sta-menu-text!important;
+}
+
+.blog-toggle-sm {
+  display: none;
+} 
+
+.blog-toggle-div {
+  padding: 0;
+    margin-top: -30px;  
+}
+
+@media (min-width:768px) {
+  .blog-toggle {
+    font-size: 0.8rem;
+    color: $sta-menu-text;
+    background-color: #fff;
+    padding: 0.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  .blog-toggle-lg {
+  }
+  
+  .blog-toggle-sm {
+    display: inline-block;
+  } 
+  .blog-toggle-div {
+  }
+}
+
+
+/*************************************************
+ *  Animation
+ **************************************************/
+
+.hand { 
+  -webkit-animation-iteration-count: infinite; 
+  -webkit-transform-origin: 50% 50%; 
+  -webkit-animation: target_image 2s; 
+  animation: target_image 2s; 
+  animation-iteration-count: infinite; 
+  transform-origin: 50% 50%; 
+} 
+@-webkit-keyframes target_image { 
+  0% { transform: rotate(10deg); } 
+  50% { transform: rotate(50deg) } 
+  100% { transform: rotate(10deg); } 
+}
+@keyframes target_image { 
+  0% { transform: rotate(10deg); } 
+  50% { transform: rotate(50deg) } 
+  100% { transform: rotate(10deg); } 
+}
+
+.FadeInAndOut {
+  position: relative;
+  -webkit-animation: fadeinout 10s linear forwards;
+  -webkit-animation-iteration-count: infinite; 
+  animation: fadeinout 10s linear forwards;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+}
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+}
+
+.FadeOutAndIn {
+  position: relative;
+  -webkit-animation: fadeoutin 10s linear forwards;
+  -webkit-animation-iteration-count: infinite; 
+  animation: fadeoutin 10s linear forwards;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes fadeoutin {
+  0%,100% { opacity: 1; }
+  20% { opacity: 0; }
+  80% { opacity: 0; }
+}
+@keyframes fadeoutin {
+  0%,100% { opacity: 1; }
+  20% { opacity: 0; }
+  80% { opacity: 0; }
+}
+
+

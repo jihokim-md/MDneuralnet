@@ -1,0 +1,18 @@
+{{ $current_page := . }}
+
+
+{{ range .Translations }}
+
+{{ if eq .Lang "ko" }}
+  <a class="translate" href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} style="text-align: left;"><img src="/img/korean.png" style="height: 14px;">
+  </a>
+  <a class="translate_mobile" href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} style="text-align: left;">🇰🇷
+  </a>  
+{{ else }}
+  <a class="translate" href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} style="text-align: left;"><img src="/img/english.png" style="height: 12px;">
+  </a>
+  <a class="translate_mobile" href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} style="text-align: left;">🇺🇸
+  </a>
+{{ end }}
+
+{{ end }}

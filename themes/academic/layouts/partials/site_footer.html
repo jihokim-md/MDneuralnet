@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  {{ if or (site.GetPage "terms.md") (site.GetPage "privacy.md") }}
+  <p class="powered-by">
+    {{ with site.GetPage "privacy.md" }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}
+    {{ with site.GetPage "terms.md" }}
+      {{ if site.GetPage "privacy.md" }} &middot; {{ end }}
+      {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+    {{ end }}
+  </p>
+  {{ end }}
+  {{ if eq .RelPermalink "/" }}
+  {{ else }}
+  <div class="col-3 col-md-3" style="display: inline-block; padding: 0;">
+    <p style="text-align: left">
+      {{ partial "translate" . }}
+    </p>
+  </div>
+  <div class="col-6 col-md-6" style="display: inline-block; padding: 0;">
+    <p class="powered-by">
+      {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}
+    </p>
+  </div>
+  {{ end }}
+</footer>

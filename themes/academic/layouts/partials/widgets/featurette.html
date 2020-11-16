@@ -1,0 +1,30 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<div class="row featurette">
+  {{ with $page.Title }}
+  <div class="col-md-12 section-heading">
+    <h4>{{ . | markdownify | emojify }}</h4>
+    {{ if $page.Params.subtitle }}<p>{{ $page.Params.subtitle | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
+
+  {{ with $page.Content }}
+  <div class="col-md-12">
+  {{ . }}
+  </div>
+  {{ end }}
+
+    {{ range $page.Params.feature }}
+    {{ $pack := or .icon_pack "fas" }}
+    {{ $pack_prefix := $pack }}
+    {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+      {{ $pack_prefix = "fa" }}
+    {{ end }}
+
+    <div class="article-tags">
+      <a class="badge badge-light" style="margin: 3px 0px; font-size: 0.8rem;">{{ .name | markdownify | emojify }}</a>
+    </div>
+    {{ end }}
+
+</div>

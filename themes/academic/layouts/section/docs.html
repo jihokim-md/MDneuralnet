@@ -1,0 +1,35 @@
+{{- define "main" -}}
+
+<section class="home-section wg-pages">
+{{ partial "page_header.html" . }}
+{{ $item := . }}
+</section>
+
+<div class="container" style="padding-top: 30px">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+
+    {{ if gt (len .Sections) 0}}
+    {{ range .Sections }}
+
+    <div class="card-simple docs-card" style=" cursor: pointer;" onclick="location.href='{{ .RelPermalink }}';">
+      {{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+      {{ $anchor := .Params.image.focal_point | default "Smart" }}
+      {{ with $resource }}
+      {{ $image := .Fill (printf "600x300 q90 %s" $anchor) }}
+
+          <img src="{{ $image.RelPermalink }}" class="article-thumbnail" alt="">
+      {{end}}
+        <div style="">
+        <h3 class="docs-title mb-0">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h3>
+        <p style="margin-left: 1rem;">{{.Summary | truncate 20}}</p>
+        </div>
+    </div>
+    {{end}}
+    {{end}}
+</div>
+
+{{- end -}}

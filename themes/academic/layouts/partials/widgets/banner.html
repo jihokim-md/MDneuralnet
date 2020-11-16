@@ -1,0 +1,34 @@
+{{/* Portfolio Widget */}}
+
+{{/* Initialise */}}
+{{ $ := .root }}
+{{ $st := .page }}
+{{ $items_type := $st.Params.content.page_type | default "banner" }}
+{{ $columns := $st.Params.design.columns | default "1" }}
+
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+
+  <div class="center-text">
+    {{ with $st.Title }}<h1 class="mt-0">{{ . | markdownify | emojify }}</h1>{{ end }}
+  </div>
+  <div>
+
+    {{ with $st.Content }}{{ . }}{{ end }}
+
+    <div class="isotope projects-container js-layout-masonry" style="padding: 2rem 10px 1rem 10px">
+      {{ range $idx, $item := where site.RegularPages "Type" $items_type }}
+
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_self\" rel=\"noopener\"" }}
+        {{ end }}
+
+        {{ partial "li_banner" (dict "widget" $st "index" $idx "item" $item "link" $link "target" $target) }}
+
+      {{ end }}
+
+  </div>
+</div>

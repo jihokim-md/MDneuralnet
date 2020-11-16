@@ -1,0 +1,81 @@
+/*************************************************
+ *  List items
+ **************************************************/
+
+.view-list-item {
+  margin-bottom: 1rem;
+}
+
+.pub-icon {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.81em;
+  padding-right: 6px;
+}
+
+.view-list-item .article-metadata {
+  margin-bottom: 0;
+}
+
+.pub-list-item .pub-abstract {
+  font-size: 1rem;
+}
+
+.pub-list-item .btn-links {
+  padding-top: 10px;
+}
+
+/*************************************************
+ *  Compact (stream) list view
+ **************************************************/
+
+.media.stream-item {
+  margin-bottom: 1rem;
+}
+
+.media.stream-item .article-title,
+.card-simple .article-title {
+  font-size: 1rem;
+  padding: 0px 10px;word-break: break-all;
+}
+
+@media screen and (min-width: 928px) {
+  .media.stream-item .article-title,
+  .card-simple .article-title {
+    font-size: 0.75rem;
+    padding: 0px 7px;word-break: break-all;
+  }
+}
+
+.media.stream-item .article-style,
+.card-simple .article-style {
+  margin-top: 0px;
+  font-size: 0.8rem;
+  padding: 0px 10px;
+  line-height: 17px;word-break: break-all;overflow:hidden;
+}
+
+@media screen and (min-width: 928px) {
+  .media.stream-item .article-style,
+  .card-simple .article-style {
+    margin-top: 0px;
+    font-size: 0.65rem;
+    padding: 0px 7px;
+    line-height: 17px;word-break: break-all;overflow:hidden;
+  }
+}
+
+.media.stream-item .stream-meta {
+  margin-top: 0px;
+}
+
+.media.stream-item img {
+  max-width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .media.stream-item img {
+    max-width: 80px;
+  }
+}

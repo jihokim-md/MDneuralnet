@@ -1,0 +1,36 @@
+{{/* Pages Widget */}}
+
+{{/* Initialise */}}
+{{ $ := .root }}
+{{ $st := .page }}
+{{ $taxonomy := $st.Params.content.taxonomy | default "categories" }}
+
+{{ $items_count := $st.Params.content.count }}
+{{ if eq $items_count 0 }}
+  {{ $items_count = 65535 }}
+{{ else }}
+  {{ $items_count = $items_count | default 20 }}
+{{ end }}
+
+{{/* Query */}}
+{{ $categories := first $items_count (index site.Taxonomies $taxonomy).ByCount }}
+{{ $count := len $categories }}
+
+<div class="row">
+  <div class="col-12 section-heading">
+    <h4 style="  font-size: 2.4rem;"><a href="/categories">{{ with $st.Title }}{{ . | markdownify | emojify }}{{ end }}</a></h4>
+    {{ with $st.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+  </div>
+  <div class="col-12 col-lg-12"></div>
+  <div class="col-12 col-lg-12">
+
+      <div class="tag-cloud">
+        {{ range $name, $term := (sort $categories ".Page.Title" "asc") }}
+          {{ $tagCount := len $term.Pages }}
+          <a class="badge badge-light" href="{{ .Page.RelPermalink }}" style="">{{ .Page.Title }}</a>
+        {{ end }}
+      </div>
+
+  </div>
+  </div>
+</div>
